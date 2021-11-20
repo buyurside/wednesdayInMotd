@@ -20,15 +20,15 @@ fi
 path2banner="/etc/motd"
 
 
-if [ ! -e $MY_PATH/motdSrcs/motd ]; then
-	cp /etc/motd /%MY_PATH/motdSrcs/essential
+if [ ! -e $MY_PATH/motdSrcs/essential ]; then
+	cp /etc/motd $MY_PATH/motdSrcs/essential
 fi
 	
 
 while [ true ];
 do
 	today="$( cut -d' ' -f1 <<< "$(date)" )"
-	if [ "Wed" -eq "$(today)" ]; then
+	if [[ "Wed" -eq "$today" ]]; then
 		cat $MY_PATH/motdSrcs/wednes.day $MY_PATH/motdSrcs/essential > $path2banner
 	else
 		cat $MY_PATH/motdSrcs/essential > $path2banner
