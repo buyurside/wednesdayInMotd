@@ -1,8 +1,9 @@
 #!/usr/local/bin/bash
+#!/bin/bash
 
 if [ "$EUID" -ne 0 ];
 then
-	echo "This script requeres root to modify /etc/motd"
+	echo "This script requires root to modify /etc/motd"
 	exit
 fi
 
