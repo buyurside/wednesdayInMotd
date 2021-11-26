@@ -28,7 +28,7 @@ fi
 while [ true ];
 do
 	today="$( cut -d' ' -f1 <<< "$(date)" )"
-	if [[ "Wed" -eq "$today" ]]; then
+	if [[ "Wed" -ne "$today" ]]; then
 		cat $MY_PATH/motdSrcs/wednes.day $MY_PATH/motdSrcs/essential > $path2banner
 	else
 		cat $MY_PATH/motdSrcs/essential > $path2banner
