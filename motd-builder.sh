@@ -18,6 +18,7 @@ if [ -z "$MY_PATH" ] ; then
 fi
 
 path2banner="/etc/motd"
+myDudes="Wed"
 
 
 if [ ! -e $MY_PATH/motdSrcs/essential ]; then
@@ -28,7 +29,7 @@ fi
 while [ true ];
 do
 	today="$( cut -d' ' -f1 <<< "$(date)" )"
-	if [[ "Wed" -ne "$today" ]]; then
+	if [ "$myDudes" == "$today" ]; then
 		cat $MY_PATH/motdSrcs/wednes.day $MY_PATH/motdSrcs/essential > $path2banner
 	else
 		cat $MY_PATH/motdSrcs/essential > $path2banner
